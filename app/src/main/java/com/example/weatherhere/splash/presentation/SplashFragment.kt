@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import com.example.weatherhere.R
 import com.example.weatherhere.databinding.SplashFragmentBinding
 
 class SplashFragment : Fragment() {
@@ -29,7 +31,14 @@ class SplashFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Handler().postDelayed({
+          moveToNext()
+        },SPLASH_TIME_OUT)
 
+
+    }
+    private  fun moveToNext(){
+        findNavController().navigate(R.id.action_splashFragment_to_biometricFingerPrintFragment)
     }
 
 

@@ -10,5 +10,27 @@
         android:id="@+id/splashFragment"
         android:name="com.example.weatherhere.splash.presentation.SplashFragment"
         android:label="splash_fragment"
-        tools:layout="@layout/splash_fragment" />
+        tools:layout="@layout/splash_fragment" >
+        <action
+            android:id="@+id/action_splashFragment_to_biometricFingerPrintFragment"
+            app:destination="@id/biometricFingerPrintFragment"
+            app:popUpToInclusive="true"
+            app:popUpTo="@id/splashFragment"/>
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/biometricFingerPrintFragment"
+        android:name="com.example.weatherhere.biometric.presentation.BiometricFingerPrintFragment"
+        android:label="BiometricFingerPrintFragment" >
+        <action
+            android:id="@+id/action_biometricFingerPrintFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.weatherhere.home.presentation.HomeFragment"
+        android:label="home_fragment"
+        tools:layout="@layout/home_fragment" />
 </navigation>
