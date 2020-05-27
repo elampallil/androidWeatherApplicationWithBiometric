@@ -45,5 +45,9 @@ dependencies {
     implementation 'com.airbnb.android:lottie:3.0.0'
     implementation 'androidx.biometric:biometric:1.0.1'
 
+    //retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.0.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.0.0'
+
 
 }

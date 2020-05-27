@@ -15,7 +15,6 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/beach"
         tools:context=".biometric.presentation.BiometricFingerPrintFragment">
 
         <Button
@@ -43,7 +42,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_autoPlay="true"
             app:lottie_loop="true"
-            app:lottie_rawRes="@raw/fingerprint" />
+            app:lottie_rawRes="@raw/fingerprint_new" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
