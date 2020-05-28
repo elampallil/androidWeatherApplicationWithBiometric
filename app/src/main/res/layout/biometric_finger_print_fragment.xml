@@ -15,6 +15,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/nature_image"
         tools:context=".biometric.presentation.BiometricFingerPrintFragment">
 
         <Button
@@ -24,10 +25,10 @@
             android:layout_marginStart="@dimen/common_16dp"
             android:layout_marginEnd="@dimen/common_16dp"
             android:layout_marginBottom="@dimen/common_16dp"
-            android:background="@drawable/button_shape"
+            android:backgroundTint="#000"
             android:onClick="@{(view) -> biometricFingerPrintViewModel.onClickButton()}"
             android:text="@string/enable_fingerprint"
-            android:textColor="#00CCFF"
+            android:textColor="#fff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

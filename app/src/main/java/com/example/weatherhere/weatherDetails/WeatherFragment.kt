@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 import com.example.weatherhere.databinding.WeatherFragmentBinding
+import com.example.weatherhere.home.domain.ConsolidatedWeather
 
 class WeatherFragment : Fragment() {
 
@@ -22,6 +23,16 @@ class WeatherFragment : Fragment() {
         binding.weatherViewModel = weatherViewModel
         binding.lifecycleOwner = this
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        arguments?.let { bundle ->
+            val consolidateWeather = bundle.getParcelable < ConsolidatedWeather>("weather")
+            consolidateWeather?.let {
+                weatherViewModel.setWeatherDetailsToLiveData(it)
+            }
+        }
     }
 
 

@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.airPressureLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
@@ -93,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.humidityLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
@@ -128,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.temperatureLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
@@ -163,6 +166,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.visibilityLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
@@ -199,6 +203,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.windDirectionLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
@@ -234,6 +239,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:gravity="center"
+                android:text="@={weatherViewModel.windSpeedLiveData}"
                 android:textColor="#000" />
         </androidx.cardview.widget.CardView>
 
