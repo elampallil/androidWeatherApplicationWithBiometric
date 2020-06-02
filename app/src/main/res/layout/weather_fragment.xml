@@ -23,6 +23,7 @@
             app:layout_constraintTop_toTopOf="parent"
             app:lottie_rawRes="@raw/back_arrow"
             app:lottie_autoPlay="true"
+            android:onClick="@{(view) -> weatherViewModel.onClickBackButton()}"
             app:lottie_loop="true"
             android:layout_marginLeft="@dimen/common_16dp" />
 

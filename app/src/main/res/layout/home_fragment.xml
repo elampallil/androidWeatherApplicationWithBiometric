@@ -16,6 +16,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/beach"
         tools:context=".home.presentation.HomeFragment">
 
         <EditText
@@ -40,10 +41,33 @@
             android:layout_marginEnd="@dimen/common_16dp"
             android:background="@drawable/button_shape"
             android:onClick="@{(view) -> homeViewModel.onClickSumbitButton()}"
-            android:text="submit"
+            android:text="@string/submit"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_enter_the_text" />
+
+        <ProgressBar
+            android:visibility="gone"
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="find my location"
+            android:onClick="@{(view)->homeViewModel.onClickFindMyLocation()}"
+            android:background="@drawable/button_shape"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/common_16dp"
+            android:layout_marginStart="@dimen/common_16dp"
+            android:layout_marginEnd="@dimen/common_16dp"
+            />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

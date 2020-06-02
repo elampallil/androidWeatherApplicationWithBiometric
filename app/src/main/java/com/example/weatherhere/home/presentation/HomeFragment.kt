@@ -36,6 +36,7 @@ class HomeFragment : Fragment() {
         homeViewModel.getSumbmitButtonClickLiveData().observe(viewLifecycleOwner, Observer {
             if (it.getContentIfNotHandld() == true) {
                 val place = et_enter_the_text.text.toString()
+                progress_bar.visibility = View.VISIBLE
                 homeViewModel.getWeatherDetails(place)
             }
         })
@@ -43,8 +44,13 @@ class HomeFragment : Fragment() {
             val consolidatedWeatherList = it.consolidated_weather
             val consolidatedWeather = consolidatedWeatherList.get(0)
             val bundle = bundleOf("weather" to consolidatedWeather)
+            progress_bar.visibility = View.GONE
             findNavController().navigate(R.id.action_homeFragment_to_weatherFragment, bundle)
-
+        })
+        homeViewModel.getFindMyLocationLiveData().observe(viewLifecycleOwner, Observer {
+            if(it.getContentIfNotHandld()==true){
+                findNavController().navigate(R.id.action_homeFragment_to_mapsFragment)
+            }
         })
 
     }

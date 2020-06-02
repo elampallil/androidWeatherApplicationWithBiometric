@@ -5,7 +5,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.navigation.fragment.findNavController
+import com.example.weatherhere.R
 import com.example.weatherhere.databinding.WeatherFragmentBinding
 import com.example.weatherhere.home.domain.ConsolidatedWeather
 
@@ -22,6 +25,7 @@ class WeatherFragment : Fragment() {
         weatherViewModel = ViewModelProviders.of(this).get(WeatherViewModel::class.java)
         binding.weatherViewModel = weatherViewModel
         binding.lifecycleOwner = this
+        setObservers()
         return binding.root
     }
 
@@ -33,6 +37,13 @@ class WeatherFragment : Fragment() {
                 weatherViewModel.setWeatherDetailsToLiveData(it)
             }
         }
+    }
+    fun setObservers(){
+        weatherViewModel.getBackIconClickLiveData().observe(viewLifecycleOwner, Observer {
+            if(it.getContentIfNotHandld()==true){
+                findNavController().navigate(R.id.action_weatherFragment_to_homeFragment)
+            }
+        })
     }
 
 

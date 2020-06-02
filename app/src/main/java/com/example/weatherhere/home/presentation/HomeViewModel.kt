@@ -18,9 +18,11 @@ import retrofit2.Response
 class HomeViewModel(application: Application) : AndroidViewModel(application) {
     private val sumbmitButtonClickLiveData = MutableLiveData<SingleLiveEvent<Boolean>>()
     private val weatherResponseLiveData = MutableLiveData<WeatherData>()
+    private val findMyLocationLiveData = MutableLiveData<SingleLiveEvent<Boolean>>()
     fun getWeatherResponseLiveData() : LiveData<WeatherData> = weatherResponseLiveData
     fun getSumbmitButtonClickLiveData(): LiveData<SingleLiveEvent<Boolean>> =
         sumbmitButtonClickLiveData
+    fun getFindMyLocationLiveData():LiveData<SingleLiveEvent<Boolean>> =findMyLocationLiveData
 
     private val retrofitInstance = RetrofitInstance()
 
@@ -72,5 +74,8 @@ class HomeViewModel(application: Application) : AndroidViewModel(application) {
 
     fun onClickSumbitButton() {
         sumbmitButtonClickLiveData.value = SingleLiveEvent(true)
+    }
+    fun onClickFindMyLocation() {
+        findMyLocationLiveData.value = SingleLiveEvent(true)
     }
 }
